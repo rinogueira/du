@@ -8,7 +8,7 @@ enum CommandOption {
   sortedAlfabetic,
 }
 
-final optionsMap = {
+final _optionsMap = {
   '-h': CommandOption.help,
   '--help': CommandOption.help,
   '-k': CommandOption.kbytes,
@@ -28,7 +28,7 @@ final optionsMap = {
 List<CommandOption> parseOptions(List<String> arguments) {
   final parsedOptions = <CommandOption>{};
   arguments.where((arg) => arg.startsWith('-')).forEach((arg) {
-    var option = optionsMap[arg];
+    var option = _optionsMap[arg];
     if (option == null) {
       option = CommandOption.help;
       print('Invalid option "$arg"');

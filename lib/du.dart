@@ -119,10 +119,10 @@ class _DuCalc {
 }
 
 class _DuResult {
+  const _DuResult(this.total, this.description, this.unit);
+
   static final bytesFormat = NumberFormat('#,###');
   static final generalFormat = NumberFormat('#,###.00');
-
-  _DuResult(this.total, this.description, this.unit);
 
   final double total;
   final String description;
